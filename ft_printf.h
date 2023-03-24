@@ -16,7 +16,7 @@
 # include <stdarg.h>
 
 int	ft_printf(const char *str, ...);
-int	printchar(va_list arg);
+int	printchar(char c);
 int	printstring(va_list arg);
 int	printdecimal(va_list arg);
 int	printint(va_list arg);

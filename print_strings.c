@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-int	printchar(va_list arg)
+int	printchar(char c)
 {
-	ft_putchar_fd(va_arg(arg, int), 1);
+	ft_putchar_fd(c, 1);
 	return (1);
 }
 

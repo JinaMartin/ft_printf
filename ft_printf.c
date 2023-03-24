@@ -17,7 +17,7 @@
 static int	checkconversion(char c, va_list argument)
 {
 	if (c == 'c')
-		return (printchar(argument));
+		return (printchar(va_arg(arg, int)));
 	else if (c == 's')
 		return (printstring(argument));
 	else if (c == 'p')
