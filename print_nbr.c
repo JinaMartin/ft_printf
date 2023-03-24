@@ -82,14 +82,6 @@ int	printadress(va_list arg)
 	if (n == 0)
 		return (ft_printf("(nil)"));
 	i = ft_printf("0x");
-	i = ft_printf("%x", n);
-	/*while (len > 0)
-	{
-		if (nbr % 16 <= 9)
-			str[--len] = nbr % 16 + '0';
-		else
-			str[--len] = nbr % 16 - 10 + 'a';
-		nbr /= 16;
-	}*/
+	i += ft_printf("%x", n);
 	return (i);
 }

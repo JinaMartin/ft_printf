@@ -23,7 +23,7 @@ int	printint(int nbr);
 int	printuint(int nbr);
 int	printhex(unsigned int nbr, char format);
 int	printadress(va_list arg);
-char	uitoa(unsigned int n);
-void	upperhex(char *str);
+char		uitoa(unsigned int n);
+void		upperhex(char *str);
 
 #endif
