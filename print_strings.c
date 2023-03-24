@@ -18,18 +18,15 @@ int	printchar(char c)
 	return (1);
 }
 
-int	printstring(va_list arg)
+int	printstring(char  *str)
 {
-	char	*str;
-
-	str = va_arg(arg, char *);
 	if (!str)
 		str = "(null)";
 	ft_putstr_fd(str, 1);
 	return (ft_strlen(str));
 }
 
-int	hexlen(unsigned int nbr)
+static int	hexlen(unsigned int nbr)
 {
 	int	i;
 
@@ -42,19 +39,30 @@ int	hexlen(unsigned int nbr)
 	return (i);
 }
 
-int	printhex(va_list arg, char format)
+static void fillhex(unsigned int nbr, char *str, int index, char format)
 {
-	char			str[9];
-	int				len;
-	unsigned int	nbr;
-	int				i;
+	if (nbr >= 16)
+		fillhex(nbr / 16, str++, ++index, format);
+	if (nbr % 16 <= 9)
+		str[index] = nbr % 16 + '0';
+	else if (format == 'x')
+		str[index] = nbr % 16 - 10 + 'a';
+	else if (format == 'X')
+		str[index] = nbr % 16 - 10 + 'A';
+}
 
-	nbr = va_arg(arg, unsigned int);
+int	printhex(unsigned int nbr, char format)
+{
+	char	str[8];
+	int		len;
+	int		i;
+
 	len = hexlen(nbr);
 	i = len;
-	if (nbr == 0)
-		i = ft_printf("%c", '0');
-	while (len > 0)
+	//if (nbr == 0)
+	//	i = ft_printf("%c", '0');
+	fillhex(nbr, str, 0, format);
+	/*while (len > 0)
 	{
 		if (nbr % 16 <= 9)
 			str[--len] = nbr % 16 + '0';
@@ -63,7 +71,7 @@ int	printhex(va_list arg, char format)
 		else if (format == 'X')
 			str[--len] = nbr % 16 - 10 + 'A';
 		nbr /= 16;
-	}
+	}*/
 	ft_putstr_fd(str, 1);
 	return (i);
 }

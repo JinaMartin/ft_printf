@@ -17,21 +17,21 @@
 static int	checkconversion(char c, va_list argument)
 {
 	if (c == 'c')
-		return (printchar(va_arg(arg, int)));
+		return (printchar(va_arg(argument, int)));
 	else if (c == 's')
-		return (printstring(argument));
+		return (printstring(va_arg(argument, char *)));
 	else if (c == 'p')
 		return (printadress(argument));
 	else if (c == 'd')
-		return (printint(argument));
+		return (printint(va_arg(argument, int)));
 	else if (c == 'i')
-		return (printint(argument));
+		return (printint(va_arg(argument, int)));
 	else if (c == 'u')
-		return (printuint(argument));
+		return (printuint(va_arg(argument, int)));
 	else if (c == 'x')
-		return (printhex(argument, c));
+		return (printhex(va_arg(argument, unsigned int), c));
 	else if (c == 'X')
-		return (printhex(argument, c));
+		return (printhex(va_arg(argument, unsigned int), c));
 	else if (c == '%')
 		return (write(1, "%", 1));
 	return (0);

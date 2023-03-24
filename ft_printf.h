@@ -17,13 +17,12 @@
 
 int	ft_printf(const char *str, ...);
 int	printchar(char c);
-int	printstring(va_list arg);
+int	printstring(char *str);
 int	printdecimal(va_list arg);
-int	printint(va_list arg);
-int	printuint(va_list arg);
-int	printhex(va_list arg, char format);
+int	printint(int nbr);
+int	printuint(int nbr);
+int	printhex(unsigned int nbr, char format);
 int	printadress(va_list arg);
-int	hexlen(unsigned int nbr);
 char	uitoa(unsigned int n);
 void	upperhex(char *str);
 

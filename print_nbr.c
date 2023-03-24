@@ -12,12 +12,12 @@
 
 #include "ft_printf.h"
 
-int	printint(va_list arg)
+int	printint(int nbr)
 {
 	char	*str;
 	int		i;
 
-	str = ft_itoa(va_arg(arg, int));
+	str = ft_itoa(nbr);
 	ft_putstr_fd(str, 1);
 	i = ft_strlen(str);
 	free (str);
@@ -61,12 +61,12 @@ char	*ft_uitoa(unsigned int n)
 	return (str);
 }
 
-int	printuint(va_list arg)
+int	printuint(int nbr)
 {
 	char	*str;
 	int		i;
 
-	str = ft_uitoa(va_arg(arg, int));
+	str = ft_uitoa(nbr);
 	ft_putstr_fd(str, 1);
 	i = ft_strlen(str);
 	free (str);
