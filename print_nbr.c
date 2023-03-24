@@ -82,6 +82,6 @@ int	printadress(va_list arg)
 	if (n == 0)
 		return (ft_printf("(nil)"));
 	i = ft_printf("0x");
-	i += ft_printf("%x", n);
+	i +	= ft_printf("%x", n);
 	return (i);
 }
