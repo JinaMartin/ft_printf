@@ -15,14 +15,14 @@
 # include "../libft/libft/libft.h"
 # include <stdarg.h>
 
-int	ft_printf(const char *str, ...);
-int	printchar(char c);
-int	printstring(char *str);
-int	printdecimal(va_list arg);
-int	printint(int nbr);
-int	printuint(int nbr);
-int	printhex(unsigned int nbr, char format);
-int	printadress(unsigned long int n, int i);
-char		uitoa(unsigned int n);
+char	uitoa(unsigned int n);
+int		ft_printf(const char *str, ...);
+int		printchar(char c);
+int		printstring(char *str);
+int		printdecimal(va_list arg);
+int		printint(int nbr);
+int		printuint(int nbr);
+int		printhex(unsigned int nbr, char format);
+int		printadress(unsigned long int n, int i);
 
 #endif
