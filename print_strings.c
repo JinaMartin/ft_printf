@@ -53,9 +53,6 @@ static void	fillhex(unsigned int nbr, char format)
 
 int	printhex(unsigned int nbr, char format)
 {
-	int		len;
-
-	len = hexlen(nbr);
 	if (nbr == 0)
 		return (write(1, "0", 1));
 	else

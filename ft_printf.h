@@ -22,8 +22,7 @@ int	printdecimal(va_list arg);
 int	printint(int nbr);
 int	printuint(int nbr);
 int	printhex(unsigned int nbr, char format);
-int	printadress(va_list arg);
+int	printadress(unsigned long int n, int i);
 char		uitoa(unsigned int n);
-void		upperhex(char *str);
 
 #endif

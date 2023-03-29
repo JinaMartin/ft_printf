@@ -73,15 +73,14 @@ int	printuint(int nbr)
 	return (i);
 }
 
-int	printadress(va_list arg)
+int	printadress(unsigned long int n, int i)
 {
-	unsigned long int	n;
-	int					i;
-
-	n = va_arg(arg, unsigned long int);
-	if (n == 0)
+	if (n == 0 && i == 0)
 		return (ft_printf("(nil)"));
-	i = ft_printf("0x");
-	i +	= ft_printf("%x", n);
+	else if (i == 0)
+		i = ft_printf("0x");
+	if (n >= 16)
+		i = printadress(n / 16, i);
+	i += write(1, &"0123456789abcdef"[n % 16], 1);
 	return (i);
 }

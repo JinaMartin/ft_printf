@@ -21,7 +21,7 @@ static int	checkconversion(char c, va_list argument)
 	else if (c == 's')
 		return (printstring(va_arg(argument, char *)));
 	else if (c == 'p')
-		return (printadress(argument));
+		return (printadress(va_arg(argument, unsigned long int), 0));
 	else if (c == 'd')
 		return (printint(va_arg(argument, int)));
 	else if (c == 'i')
